@@ -11,12 +11,12 @@ export class AppComponent {
   students = [
   	{
   		id: 1,
-  		name: 'Viet Anh',
-  		age: 30
+  		name: 'Que Anh',
+  		age: 60
   	},{
   		id: 2,
-  		name: 'Thuy Linh',
-  		age: 50
+  		name: 'Tien',
+  		age: 21
   	},{
   		id: 3,
   		name: 'Chung',
