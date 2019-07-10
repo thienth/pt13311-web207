@@ -1,5 +1,16 @@
-<h2>Danh sách phạm nhân cua nha tu FPT Poly:</h2>
-<div class="prison" *ngFor="let p of students">
-  <p>Tên: {{p.name}} - mstn: {{p.id}}</p>
-  <p>Tuổi: {{p.age}}</p>
+<h2>Thông tin cá nhân:</h2>
+<p>Tên: {{user.name}}</p>
+<p>Tuổi: {{user.age}}</p>
+<p>Địa chỉ: {{user.address}}</p>
+<p>Quê quán: {{user.hometown}}</p>
+<div>
+	Tên hero: <input 
+				(keydown)="keyupHeroName($event)"
+				type="text" value="">
 </div>
+<ul>
+	<li 
+		*ngFor="let hero of heroList"
+		(click)="removeHero(hero.id)"
+	>{{hero.name}}</li>
+</ul>
