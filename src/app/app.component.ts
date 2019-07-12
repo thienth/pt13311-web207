@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'pt13311';
 
   user = {
-    name: 'nguyen tri dien',
+    name: 'nguyen tri the',
     age: 20,
     address: '15 dong quan',
     hometown: 'ha nam'
