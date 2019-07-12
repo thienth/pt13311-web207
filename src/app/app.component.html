@@ -11,10 +11,17 @@
 	Hometown: {{user.hometown}}
 </p>
 <div>
-	Ten hero: <input type="text" (keydown)="keyupHeroName ($event)">
+	Ten hero: <input type="text" [value] = "heroTmp.name" (keyup)="heroTmp.name = $event.target.value">
 </div>
 <ul>
-	<li *ngFor="let hero of heroList" (click)="removeHero(hero.id)">
+
+	<li *ngFor="let hero of heroList">
+<!--	    (click)="removeHero(hero.id)">-->
 		{{hero.name}}
+		{{hero.image}}
+		<img [src]="hero.image" alt="">
+		<button (click)="editHero(hero)">
+				Button
+		</button>
 	</li>
 </ul>
