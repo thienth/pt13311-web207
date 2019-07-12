@@ -14,50 +14,88 @@ export class AppComponent {
     address: '15 dong quan',
     hometown: 'ha nam'
   }
+  heroTmp = {
+    id:0,
+    name: "",
+    image: ""
+  }
 
   heroList = [
     { 
       id: 11, 
       name: 'Dr Nice', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'
     },
     { 
       id: 12, 
       name: 'Narco', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 13, 
       name: 'Bombasto', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 14, 
       name: 'Celeritas', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 15, 
       name: 'Magneta', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 16, 
       name: 'RubberMan', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 17, 
       name: 'Dynama', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 18, 
       name: 'Dr IQ', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 19, 
       name: 'Magma', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
     { 
       id: 20, 
       name: 'Tornado', 
-      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'}
+      image: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'}
   ];
+
+  save = () => {
+    if(this.heroTmp.id == 0){
+      this.heroTmp.id = this.getNewId();
+      this.heroList.push({...this.heroTmp});
+    }else{
+      var index = this.heroList.map((h) => h.id ).indexOf(this.heroTmp.id);
+      this.heroList[index] = {...this.heroTmp};
+    }
+    this.clear();
+  }
+  clear = () => {
+    this.heroTmp = {
+      id:0,
+      name: "",
+      image: ""
+    }
+  }
+
+  update = (hero) => {
+    this.heroTmp = {...hero};
+  }
+
+  private getNewId = () => {
+    // tim so id lon nhat
+      let maxId = 0;
+      for (var i = 0; i < this.heroList.length; ++i) {
+        if(this.heroList[i].id >= maxId){
+          maxId = this.heroList[i].id
+        }
+      }
+      return maxId+1;
+  }
 
   // arrow function 
   removeHero = (heroId) => {
@@ -68,18 +106,13 @@ export class AppComponent {
 
   keyupHeroName = (event) => {
     if(event.keyCode === 13){
-      // tim so id lon nhat
-      let maxId = 0;
-      for (var i = 0; i < this.heroList.length; ++i) {
-        if(this.heroList[i].id >= maxId){
-          maxId = this.heroList[i].id
-        }
-      }
+      
 
       // tao hero moi
       let item = {
         name: event.target.value,
-        id: maxId + 1
+        id: this.getNewId(),
+        image: ""
       }
 
       // add hero moi vao mang
