@@ -69,11 +69,14 @@ export class AppComponent {
       this.heroTmp.id = this.getNewId();
       this.heroList.push({...this.heroTmp});
     }else{
-      var index = this.heroList.map((h) => h.id ).indexOf(this.heroTmp.id);
+      var index = this.heroList.map(
+                      (h) => h.id 
+                    ).indexOf(this.heroTmp.id);
       this.heroList[index] = {...this.heroTmp};
     }
     this.clear();
   }
+
   clear = () => {
     this.heroTmp = {
       id:0,
