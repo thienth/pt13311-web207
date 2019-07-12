@@ -20,6 +20,18 @@ export class AppComponent {
     image: ""
   }
 
+  // thuc hien hien thi danh sach
+  // them/sua/xoa thong tin cua cac students
+
+  students = [
+    {
+      id: 1,
+      name: "nguyen van a",
+      age: 15,
+      avatar: ""
+    }
+  ];
+
   heroList = [
     { 
       id: 11, 
