@@ -16,16 +16,47 @@ export class AppComponent {
   }
 
   heroList = [
-    { id: 11, name: 'Dr Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
+    { 
+      id: 11, 
+      name: 'Dr Nice', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'
+    },
+    { 
+      id: 12, 
+      name: 'Narco', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 13, 
+      name: 'Bombasto', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 14, 
+      name: 'Celeritas', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 15, 
+      name: 'Magneta', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 16, 
+      name: 'RubberMan', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 17, 
+      name: 'Dynama', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 18, 
+      name: 'Dr IQ', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 19, 
+      name: 'Magma', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'},
+    { 
+      id: 20, 
+      name: 'Tornado', 
+      images: 'https://vignette.wikia.nocookie.net/doraemon/images/b/b8/Doraemon_2005.PNG/revision/latest?cb=20151207094313&path-prefix=en'}
   ];
 
   // arrow function 
