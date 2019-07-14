@@ -1,43 +1,15 @@
-<<<<<<< HEAD
-<p> Thong tin:
-	Name: {{user.name}}
-</p>
-<p>
-	Age: {{user.name}}
-</p>
-<p>
-	Address: {{user.address}}
-</p>
-<p>
-	Hometown: {{user.hometown}}
-</p>
-<div>
-	Ten hero: <input type="text" [value] = "heroTmp.name" (keyup)="heroTmp.name = $event.target.value">
-</div>
-<ul>
 
-	<li *ngFor="let hero of heroList">
-<!--	    (click)="removeHero(hero.id)">-->
-		{{hero.name}}
-		{{hero.image}}
-		<img [src]="hero.image" alt="">
-		<button (click)="editHero(hero)">
-				Button
-		</button>
-	</li>
-</ul>
-=======
 <h2>Thông tin cá nhân:</h2>
 <p>Tên: {{user.name}}</p>
 <p>Tuổi: {{user.age}}</p>
 <p>Địa chỉ: {{user.address}}</p>
 <p>Quê quán: {{user.hometown}}</p>
 <div>
-	Tên hero: <input 
+	Tên hero: <input
 				(keyup)="heroTmp.name = $event.target.value"
 				type="text" [value]="heroTmp.name">
 	<br>
-	Ảnh hero: <input 
+	Ảnh hero: <input
 				(keyup)="heroTmp.image = $event.target.value"
 				type="text" [value]="heroTmp.image">
 	<br>
@@ -45,20 +17,19 @@
 	<button type="button" (click)="reset()">Clear</button>
 </div>
 <ul>
-	<li 
+	<li
 		*ngFor="let hero of heroList"
-		[ngClass]="(hero.id%2==0)?'odd':''"	
+		[ngClass]="(hero.id%2==0)?'odd':''"
 	>
 		<p>
 			{{hero.id}} - {{hero.name}}
-			<button 
+			<button
 			(click)="update(hero)"
 			type="button">edit</button>
-			<button 
+			<button
 			(click)="removeHero(hero.id)"
 			type="button">remove</button>
 		</p>
 		<img [src]="hero.image" width="70">
 	</li>
 </ul>
->>>>>>> master
