@@ -14,4 +14,8 @@ export class CategoryService {
   getCategoryList(){
   	return this.http.get<any[]>(this.categoryApiUrl);
   }
+  removeCategory(cateId){
+  	let removeCateUrl = `${this.categoryApiUrl}/${cateId}`;
+  	return this.http.delete<any>(removeCateUrl);
+  }
 }
