@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, 
+		HttpHeaders } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CategoryService {
+
+  constructor(private http: HttpClient) { }
+  private categoryApiUrl 
+  	= 'http://5d2c2c478c90070014972095.mockapi.io/categories';
+
+  getCategoryList(){
+  	return this.http.get<any[]>(this.categoryApiUrl);
+  }
+}
