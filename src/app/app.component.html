@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 <div *ngFor="let item of category">
 	{{item.id}}
 	{{item.name}}
 </div>
+=======
+<div *ngFor="let cate of category">
+	<h2>{{cate.name}}</h2>
+	<img [src]="cate.image" width="200">
+	<br>
+	<button type="button" (click)="removeCategory(cate)">Remove</button>
+</div>
+>>>>>>> master
