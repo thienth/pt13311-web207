@@ -15,9 +15,20 @@ export class AppComponent {
             .subscribe((data) => {
               this.category = data;
             });
+
+
   }
   category = [];
   title = 'pt13311';
+  removeCategory(cate){
+    this.cateService.removeCategory(cate.id)
+        .subscribe((data) => {
+          console.log(data);
+          this.category = this.category.filter(
+            (item) => item.id != cate.id
+          )
+        });
+  } 
 
   
 

@@ -1,6 +1,13 @@
+<div>
+  <form>
+    <div>
+      Name: <input type="text"><br><br>
+      Image: <img src="" alt="">
+    </div>
+  </form>
+</div>
 
 <button (click)="save()">save</button>
-<p>baodq</p>
 <table class="table table-bordered" border="1">
   <thead>
     <tr>
@@ -14,8 +21,8 @@
     <tr>
       <td>{{cate.name}}</td>
       <td><img width="70" src="{{cate.image}}" alt="placeholder+image"></td>
-      <td><button type="button" (click)="removeStudent(cate.id)">Xóa</button></td>
-      <td><button type="button" (click)="updateStudent(cate)">Sửa</button></td>
+      <td><button type="button" (click)="removeCategory(cate)">Xóa</button></td>
+      <td><button type="button" (click)="updateCategory(cate)">Sửa</button></td>
     </tr>
   </tbody>
 </table>
