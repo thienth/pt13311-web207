@@ -30,6 +30,16 @@ export class AppComponent {
         });
   } 
 
+  // save(cate){
+  //   this.cateService.save(cate.id)
+  //       .subscribe((data) => {
+  //         console.log(data);
+  //         this.category = this.category.filter(
+  //           (item) => item.id != cate.id
+  //         )
+  //       });
+  // } 
+
   
 
 

@@ -19,4 +19,9 @@ export class CategoryService {
   	return this.http.delete<any>(removeCateUrl);
   }
 
+  // save(cateId){
+  //   let saveCateUrl = `${this.categoryApiUrl}`;
+  //   return this.http.post<any>(saveCateUrl);
+  // }
+
 }
