@@ -1,35 +1,21 @@
-<h2>Thông tin cá nhân:</h2>
-<p>Tên: {{user.name}}</p>
-<p>Tuổi: {{user.age}}</p>
-<p>Địa chỉ: {{user.address}}</p>
-<p>Quê quán: {{user.hometown}}</p>
-<p>quế anh</p>
-<div>
-	Tên hero: <input 
-				(keyup)="heroTmp.name = $event.target.value"
-				type="text" [value]="heroTmp.name">
-	<br>
-	Ảnh hero: <input 
-				(keyup)="heroTmp.image = $event.target.value"
-				type="text" [value]="heroTmp.image">
-	<br>
-	<button type="button" (click)="save()">Save</button>
-	<button type="button" (click)="reset()">Clear</button>
-</div>
-<ul>
-	<li 
-		*ngFor="let hero of heroList"
-		[ngClass]="(hero.id%2==0)?'odd':''"	
-	>
-		<p>
-			{{hero.id}} - {{hero.name}}
-			<button 
-			(click)="update(hero)"
-			type="button">edit</button>
-			<button 
-			(click)="removeHero(hero.id)"
-			type="button">remove</button>
-		</p>
-		<img [src]="hero.image" width="70">
-	</li>
-</ul>
+
+<button (click)="save()">save</button>
+<p>baodq</p>
+<table class="table table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Xóa</th>
+      <th>Sửa</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let cate of category">
+    <tr>
+      <td>{{cate.name}}</td>
+      <td><img width="70" src="{{cate.image}}" alt="placeholder+image"></td>
+      <td><button type="button" (click)="removeStudent(cate.id)">Xóa</button></td>
+      <td><button type="button" (click)="updateStudent(cate)">Sửa</button></td>
+    </tr>
+  </tbody>
+</table>
