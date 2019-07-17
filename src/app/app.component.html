@@ -1,13 +1,37 @@
-<<<<<<< HEAD
-<div *ngFor="let item of category">
-	{{item.id}}
-	{{item.name}}
-</div>
-=======
-<div *ngFor="let cate of category">
-	<h2>{{cate.name}}</h2>
-	<img [src]="cate.image" width="200">
+<div class="container-fluid">
+	<form>
+		<div class="form-group">
+			<label>Name</label>
+			<input class="form-control" placeholder="Enter name">
+		</div>
+		<div class="form-group">
+			<label>Avatar</label>
+			<input class="form-control" placeholder="Enter name">
+		</div>
+		<button class="btn btn-success">Add Student</button>
+	</form>
 	<br>
-	<button type="button" (click)="removeCategory(cate)">Remove</button>
+	<br>
+	<table class="table">
+		<thead class="thead-dark">
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Avatar</th>
+			<th scope="col">Update</th>
+			<th scope="col">Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let cate of category">
+			<td>{{cate.name}}</td>
+			<td><img [src]="cate.avatar" alt="" width="50px"></td>
+			<td>
+				<button type="button" class="btn btn-primary">Update</button>
+			</td>
+			<td>
+				<button type="button" (click)="removeCategory(cate)" class="btn btn-danger">Delete</button>
+			</td>
+		</tr>
+		</tbody>
+	</table>
 </div>
->>>>>>> master
