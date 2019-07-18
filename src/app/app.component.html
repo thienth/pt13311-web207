@@ -1,6 +1,33 @@
-<div *ngFor="let cate of category">
-	<h2>{{cate.name}}</h2>
-	<img [src]="cate.image" width="200">
-	<br>
-	<button type="button" (click)="removeCategory(cate)">Remove</button>
-</div>
+<form>
+		<h2>THÊM CATE</h2>
+		<label>Name:</label>
+		<input type="text" class="name" ><br><br>		
+		<label>Avatar:</label>
+		<input type="text" class="avatar" >
+		<br><br>
+		<button style="button" style="width:150px; height: 30px; background: pink; border: 1px solid pink;">Thêm categories</button>
+	</form>
+<br>
+
+<!-- <div style="display:flex; flex-wrap:wrap;"> -->
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Avatar</th>
+			<th>Remove</th>
+			<th>Edit</th>
+		</tr>
+	</thead> 
+<tbody *ngFor="let cate of category" style="width:25%;">	
+	<tr>
+		<td>{{cate.name}}</td>
+		<td><img [src]="cate.avatar" width="50"></td>
+		<td><button type="button" (click)="removeCategory(cate)">Remove</button></td>
+		<td><button type="button" (click)="editCategory(cate)">Edit</button></td>
+	</tr>
+</tbody> 
+	<!--</div> -->
+	
+	
+</table>

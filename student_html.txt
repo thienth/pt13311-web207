@@ -1,0 +1,83 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+     {{ title }}!
+  </h1>
+  <!-- <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> -->
+</div>
+<!-- <p>H? và tên: {{ user.name }}</p>
+<p>Tu?i: {{ user.age }}</p>
+<p>Ð?a ch?: {{ user.add }}</p>
+<p>Quê quán: {{ user.town }}</p> -->
+<!-- <p><a href="student.component.html">Sinh Viên</a></p> -->
+<div>
+  Tên Hero: <input
+            (keyup)="heroTmp.name = $event.target.value"
+                 type="text" [value]="heroTmp.name"><br><br>
+  Tên ?nh: <input
+                  (keyup)="heroTmp.image = $event.target.value"
+                 type="text" [value]="heroTmp.image"><br><br>
+  <button type="button" (click)="save()">Save</button>
+  <button type="button" (click)="reset()">Reset</button>
+</div>
+<ul>
+  <li *ngFor="let hero of heroList"
+      [ngClass]="(hero.id%2==0)?'odd':''">
+      <p>
+        {{ hero.id }} - {{hero.name}}
+      <button type="button" (click)="removeHero(hero.id)">Xóa</button>
+      <button type="button" (click)="update(hero)">S?a</button>
+      </p>
+    <img [src]="hero.image" width="70" alt="">
+  </li>
+</ul><br>
+
+<h1>Sinh Viên</h1>
+
+<div>
+  <!-- Id: <input
+            (keyup)="studentsTmp.id = $event.target.value"
+                 type="text" [value]="studentsTmp.id"><br><br> -->
+  
+  <form>
+    <div class="form-group">
+    Tên SV: <input class="form-control"
+            (keyup)="studentsTmp.name = $event.target.value"
+                 type="text" [value]="studentsTmp.name"><br><br>
+  Tu?i: <input class="form-control"
+            (keyup)="studentsTmp.age = $event.target.value"
+                 type="text" [value]="studentsTmp.age"><br><br>
+  Tên ?nh: <input class="form-control"
+                  (keyup)="studentsTmp.image = $event.target.value"
+                 type="text" [value]="studentsTmp.image"><br><br>
+  <button type="button" (click)="saveStudent()">Save</button>
+  <button type="button" (click)="clearStudent()">Reset</button>
+    </div>
+  </form><br>
+  
+</div>
+
+<table class="table table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Mã SV</th>
+      <th>Tên SV</th>
+      <th>Tu?i</th>
+      <th>Avatar</th>
+      <th>S?a</th>
+      <th>Xóa</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let students of studentsList">
+    <tr>
+      <td>{{students.id}}</td>
+      <td>{{students.name}}</td>
+      <td>{{students.age}}</td>
+      <td><img width="70" src="{{students.image}}" alt="placeholder+image"></td>
+      <td><button type="button" (click)="removeStudent(students.id)">Xóa</button></td>
+      <td><button type="button" (click)="updateStudent(students)">S?a</button></td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+
