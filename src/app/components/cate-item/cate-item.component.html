@@ -1,0 +1,56 @@
+
+<div *ngIf="itemCate != undefined">
+		<h2>{{itemCate.name}}</h2>
+		<img [src]="itemCate.avatar" width="100">
+		<button type="button" (click)="removeCategory(itemCate)" style="background: red; border: 1px solid red; color: #fff;">Remove</button>	
+		<button type="button" (click)="update(itemCate)" style="background: blue; border: 1px solid blue; color: #fff">Edit</button>	
+</div>
+
+<div>
+	<label for="">Name</label>
+	<input type="text" 
+		(keyup)="editItem.name = $event.target.value"
+		[value]="editItem.name">
+</div>
+<div>
+	<label for="">Image</label>
+	<input type="text" 
+		(keyup)="editItem.image = $event.target.value"
+		[value]="editItem.image">
+</div>
+<button type="button">Save</button>
+<button type="button">Clear</button>
+<!-- <form>
+		<h2>THÊM CATE</h2>
+		<label>Name:</label>
+		<input #cateName type="text" class="name" (keyup)="categories.name = $event.target.value" [value]="categories.name" ><br><br>		
+		<label>Avatar:</label>
+		<input type="text" class="avatar" (keyup)="categories.avatar = $event.target.value" [value]="categories.avatar">
+		<br><br>
+		<button type="button" (click)="addCategory()" style="width:150px; height: 30px; background: pink; border: 1px solid pink;">Thêm categories</button>
+		<br>
+		<br>
+		<button type="button" (click)="editCategory(categories.id, categories)" style="width:150px; height:30px; background:pink; border: 1px solid pink;">Update</button>
+	</form>
+<br>
+
+<table border="1" width="980px" style="text-align: center; font-size: 18px">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Avatar</th>
+			<th>Remove</th>
+			<th>Edit</th>
+		</tr>
+	</thead> 
+
+<tbody *ngFor="let cate of category" style="width:25%;">	
+	<tr>
+		<td>{{cate.name}}</td>
+		<td><img [src]="cate.avatar" width="100"></td>
+		<td><button type="button" (click)="removeCategory(cate)" style="background: red; border: 1px solid red; color: #fff;">Remove</button></td>
+		<td><button type="button" (click)="update(cate)" style="background: blue; border: 1px solid blue; color: #fff">Edit</button></td>
+	</tr>
+</tbody> 
+</table>
+ -->
