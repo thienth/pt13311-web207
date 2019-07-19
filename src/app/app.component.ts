@@ -10,6 +10,12 @@ export class AppComponent {
 
   }
 
+  tmpCate = {
+    id: 0,
+    name: "xxx",
+    image: "yyy"
+  }
+
   ngOnInit() {
     this.cateService.getCategoryList()
         .subscribe((data) => {

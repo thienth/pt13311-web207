@@ -1,0 +1,6 @@
+<div *ngIf="itemCate != undefined" >
+	<h2>{{itemCate.name}}</h2>
+	<img [src]="itemCate.image" width="200">
+	<br>
+	<button type="button" (click)="removeCategory(itemCate)">Remove</button>
+</div>
