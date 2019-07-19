@@ -1,0 +1,11 @@
+
+<tr>
+	<td>{{cate.name}}</td>
+	<td><img [src]="cate.avatar" alt="" width="50px"></td>
+	<td>
+		<button type="button" (click)="update(cate)" class="btn btn-primary">Update</button>
+	</td>
+	<td>
+		<button type="button" (click)="removeCategory(cate)" class="btn btn-danger">Delete</button>
+	</td>
+</tr>

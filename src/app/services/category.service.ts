@@ -19,7 +19,12 @@ export class CategoryService {
         return this.http.delete<any>(removeCateUrl);
     }
 
-    // addCategory(cate) {
-    //     return this.http.post(this.categoryApiUrl, cate, httpOptions);
-    // }
+    addCategory(categories) {
+        return this.http.post(this.categoryApiUrl, categories);
+    }
+
+    updateCategory(cateId, categories) {
+        let updateCateUrl = this.categoryApiUrl + '/' + cateId;
+        return this.http.put(updateCateUrl, categories);
+    }
 }

@@ -1,15 +1,5 @@
 <div class="container-fluid">
-	<form>
-		<div class="form-group">
-			<label>Name</label>
-			<input class="form-control" placeholder="Enter name">
-		</div>
-		<div class="form-group">
-			<label>Avatar</label>
-			<input class="form-control" placeholder="Enter name">
-		</div>
-		<button class="btn btn-success">Add Student</button>
-	</form>
+<app-cate-edit-form [editItem]="categories"></app-cate-edit-form>
 	<br>
 	<br>
 	<table class="table">
@@ -21,17 +11,8 @@
 			<th scope="col">Delete</th>
 		</tr>
 		</thead>
-		<tbody>
-		<tr *ngFor="let cate of category">
-			<td>{{cate.name}}</td>
-			<td><img [src]="cate.avatar" alt="" width="50px"></td>
-			<td>
-				<button type="button" class="btn btn-primary">Update</button>
-			</td>
-			<td>
-				<button type="button" (click)="removeCategory(cate)" class="btn btn-danger">Delete</button>
-			</td>
-		</tr>
-		</tbody>
+	<tbody>
+		<app-cate-item  *ngFor="let cate of category" [cate]="cate"></app-cate-item>
+	</tbody>
 	</table>
 </div>

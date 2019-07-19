@@ -1,0 +1,12 @@
+<form novalidate>
+	<div class="form-group">
+		<label>Name</label>
+		<input (keyup)="editItem.name = $event.target.value" [value]="editItem.name" class="form-control" placeholder="Enter name">
+	</div>
+	<div class="form-group">
+		<label>Avatar</label>
+		<input (keyup)="editItem.avatar = $event.target.value" [value]="editItem.avatar" class="form-control" placeholder="Enter name">
+	</div>
+	<button type="button" (click)="addCategory()" class="btn btn-success">Add</button>
+	<button style="margin-left:10px;" type="button" (click)="updateCategory(editItem.id)" class="btn btn-success">Update</button>
+</form>
