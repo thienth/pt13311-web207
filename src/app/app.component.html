@@ -1,3 +1,4 @@
 <app-cate-edit-form [editItem]="tmpCate"></app-cate-edit-form>
 
-<app-cate-item *ngFor="let cate of category" [itemCate]="cate"></app-cate-item>
+<app-cate-item *ngFor="let cate of category" [itemCate]="cate" 
+				(removeEvent)="removeCategory($event)"></app-cate-item>
