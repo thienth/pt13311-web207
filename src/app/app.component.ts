@@ -35,6 +35,10 @@ export class AppComponent {
         });
   } 
 
+  editCategory(cate){
+    this.tmpCate = {...cate};
+  }
+
 
 }
 

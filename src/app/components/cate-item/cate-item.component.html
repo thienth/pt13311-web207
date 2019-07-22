@@ -2,5 +2,6 @@
 	<h2>{{itemCate.name}}</h2>
 	<img [src]="itemCate.image" width="200">
 	<br>
+	<button type="button" (click)="childOnEdit(itemCate)">Edit</button>
 	<button type="button" (click)="childOnRemove(itemCate)">Remove</button>
 </div>

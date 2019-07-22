@@ -11,6 +11,7 @@ export class CateItemComponent implements OnInit {
 
 	@Input() itemCate: any;
 	@Output() removeEvent = new EventEmitter<any>();
+	@Output() editEvent = new EventEmitter<any>();
 	
 	constructor() { }
 
@@ -20,6 +21,10 @@ export class CateItemComponent implements OnInit {
 
 	childOnRemove(rmObj){
 		this.removeEvent.emit(rmObj);
+	}
+
+	childOnEdit(editObj){
+		this.editEvent.emit(editObj);
 	}
 
 }
