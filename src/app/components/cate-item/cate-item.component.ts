@@ -8,7 +8,6 @@ import { Component, OnInit, Input,
 })
 export class CateItemComponent implements OnInit {
 
-
 	@Input() itemCate: any;
 	@Output() removeEvent = new EventEmitter<any>();
 	@Output() editEvent = new EventEmitter<any>();
