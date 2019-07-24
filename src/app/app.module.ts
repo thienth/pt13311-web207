@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CateItemComponent } from './components/cate-item/cate-item.component';
 import { CateEditFormComponent } from './components/cate-edit-form/cate-edit-form.component';
+import { HomeComponent } from './screens/home/home.component';
+import { CateDetailComponent } from './screens/cate-detail/cate-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CateItemComponent,
     CateEditFormComponent,
+    HomeComponent,
+    CateDetailComponent,
   ],
   imports: [
     BrowserModule,
