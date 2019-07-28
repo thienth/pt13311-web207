@@ -14,8 +14,16 @@ export class CategoryService {
   getCategoryList(){
   	return this.http.get<any[]>(this.categoryApiUrl);
   }
+  
+  addCategory(categories){
+    return this.http.post(this.categoryApiUrl, categories);
+  }
+
+
   removeCategory(cateId){
   	let removeCateUrl = `${this.categoryApiUrl}/${cateId}`;
   	return this.http.delete<any>(removeCateUrl);
   }
+
 }
+
