@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../../services/category.service';
 import {Router} from "@angular/router"
-import { FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -14,18 +14,24 @@ export class CategoryAddComponent implements OnInit {
   constructor(private cateService: CategoryService,
   				private router: Router) { }
   model = new FormGroup({
-    name: new FormControl(''),
-    image: new FormControl('')
+    'name': new FormControl('',[
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+    'image': new FormControl('')
   });
 
   ngOnInit() {
   }
 
+  get name() { return this.model.get('name'); }
+
   save(){
   	this.cateService.addCategory(this.model.value)
   					.subscribe(data => {
   						console.log(data);
-  						
+  						this.model.value.name = ""
+              this.model.value.image = ""
   						this.router.navigate(['/']);
   					})
   }

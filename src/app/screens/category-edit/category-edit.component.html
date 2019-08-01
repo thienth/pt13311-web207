@@ -1,31 +1,32 @@
 <div class="row">
 	<div class="col-6 offset-sm-3">
-		<h3>Tạo mới danh mục</h3>
-		<div class="form-group">
-			<label for="">Tên danh mục</label>
-			<input type="text" class="form-control" 
-				[formControl]="model.name"
-			/>
-		</div>
-		<div class="row">
-			<div class="col-6">
-				<img *ngIf="model.image.value == ''" src="https://www.blackbeltkaratestudio.com/wp-content/uploads/2017/04/default-image.jpg" class="img-fluid img-thumbnail">
-				<img *ngIf="model.image.value != ''" [src]="model.image.value" class="img-fluid img-thumbnail">
+		<form [formGroup]="model">
+		
+			<h3>Tạo mới danh mục</h3>
+			<div class="form-group">
+				<label for="">Tên danh mục</label>
+				<input type="text" class="form-control" 	formControlName="name"
+				/>
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="">Ảnh danh mục</label>
-			<input type="text" class="form-control"
-				[formControl]="model.image"
-			 />
-		</div>
-		<div class="text-center">
-			<button (click)="save()" type="button" class="btn btn-success">Lưu</button>
-			&nbsp;
-			<a routerLink="/" class="btn btn-danger">Hủy</a>
-		</div>
+			<div class="row">
+				<div class="col-6">
+					<img *ngIf="model.value.image == ''" src="https://www.blackbeltkaratestudio.com/wp-content/uploads/2017/04/default-image.jpg" class="img-fluid img-thumbnail">
+					<img *ngIf="model.value.image != ''" [src]="model.value.image" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="">Ảnh danh mục</label>
+				<input type="text" class="form-control"
+				 	formControlName="image"
+				 />
+			</div>
+			<div class="text-center">
+				<button (click)="save()" type="button" class="btn btn-success">Lưu</button>
+				&nbsp;
+				<a routerLink="/" class="btn btn-danger">Hủy</a>
+			</div>
+		</form>
 	</div>
 	<br>
-	<p>{{model.name.value}}</p>
-	<p>{{model.image.value}}</p>
+	{{model.value | json}}
 </div>
