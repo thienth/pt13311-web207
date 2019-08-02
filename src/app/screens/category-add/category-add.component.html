@@ -7,6 +7,17 @@
 				<label for="">Tên danh mục</label>
 				<input type="text" class="form-control" 	formControlName="name"
 				/>
+
+				<div *ngIf="name.invalid && (name.dirty || name.touched)"
+				    class="alert alert-danger">
+
+				  <div *ngIf="name.errors.required">
+				    Điền tên danh mục
+				  </div>
+				  <div *ngIf="name.errors.minlength">
+				    Tên danh mục cần ít nhất 4 ký tự
+				  </div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-6">
@@ -19,9 +30,16 @@
 				<input type="text" class="form-control"
 				 	formControlName="image"
 				 />
+				 <div *ngIf="image.invalid && (image.dirty || image.touched)"
+				    class="alert alert-danger">
+
+				  <div *ngIf="image.errors.required">
+				    Điền đường dẫn ảnh
+				  </div>
+				</div>
 			</div>
 			<div class="text-center">
-				<button (click)="save()" type="button" class="btn btn-success">Lưu</button>
+				<button [disabled]="!model.valid" (click)="save()" type="button" class="btn btn-success">Lưu</button>
 				&nbsp;
 				<a routerLink="/" class="btn btn-danger">Hủy</a>
 			</div>

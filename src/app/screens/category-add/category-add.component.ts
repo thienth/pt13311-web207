@@ -14,26 +14,31 @@ export class CategoryAddComponent implements OnInit {
   constructor(private cateService: CategoryService,
   				private router: Router) { }
   model = new FormGroup({
-    'name': new FormControl('',[
+    'name': new FormControl('', [
         Validators.required,
         Validators.minLength(4)
       ]),
-    'image': new FormControl('')
+    'image': new FormControl('', [
+        Validators.required
+      ])
   });
 
   ngOnInit() {
   }
 
   get name() { return this.model.get('name'); }
+  get image() { return this.model.get('image'); }
 
   save(){
-  	this.cateService.addCategory(this.model.value)
-  					.subscribe(data => {
-  						console.log(data);
-  						this.model.value.name = ""
+    if(this.model.valid){
+      this.cateService.addCategory(this.model.value)
+            .subscribe(data => {
+              console.log(data);
+              this.model.value.name = ""
               this.model.value.image = ""
-  						this.router.navigate(['/']);
-  					})
+              this.router.navigate(['/']);
+            })
+    }
   }
 
 }
