@@ -38,7 +38,20 @@ export class CategoryAddComponent implements OnInit {
               this.model.value.image = ""
               this.router.navigate(['/']);
             })
+    }else{
+      this.validateAllFormFields(this.model); //{7}
     }
+  }
+
+  validateAllFormFields(formGroup: FormGroup) {         //{1}
+    Object.keys(formGroup.controls).forEach(field => {  //{2}
+      const control = formGroup.get(field);             //{3}
+      if (control instanceof FormControl) {             //{4}
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {        //{5}
+        this.validateAllFormFields(control);            //{6}
+      }
+    });
   }
 
 }
