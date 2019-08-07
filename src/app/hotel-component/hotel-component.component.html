@@ -1,0 +1,20 @@
+
+<br>
+<div class="row">
+	<a routerLink="category/add" class="btn btn-success">Tạo mới</a>
+</div>
+<div class="row">
+	<div col-3 *ngFor="let cate of categories">
+		<div class="card" style="width: 18rem;">
+			<img [src]="hotel.image" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a routerLink="detail/{{cate.id}}" title="">
+					<h5 class="card-title">{{hotel.name}}</h5>
+				</a>
+				<a routerLink="category/edit/{{cate.id}}" class="btn btn-primary">Sửa</a>
+				&nbsp;
+				<button (click)="removeHotel(hotel)" type="button" class="btn btn-danger">Xóa</button>
+			</div>
+		</div>
+	</div>
+</div>
